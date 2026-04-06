@@ -11,7 +11,7 @@ export function Events() {
       </h1>
       <p className="mt-4 max-w-2xl text-cream/65">
         Dates with Charles Wilson and The Soul Town Sinners. Replace the sample
-        entry in <code className="rounded bg-white/10 px-1.5 py-0.5 text-sm">src/data/events.ts</code>{' '}
+        entry in <code className="rounded bg-white/10 px-1.5 py-0.5 text-sm">web/src/data/events.ts</code>{' '}
         as bookings are confirmed.
       </p>
 
