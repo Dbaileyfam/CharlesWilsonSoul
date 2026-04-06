@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { DiscographySection } from '../components/DiscographySection'
 
 const heroPortraitSrc = `${import.meta.env.BASE_URL}images/charles-wilson-hero.png`
 
@@ -114,6 +115,8 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      <DiscographySection />
     </>
   )
 }
