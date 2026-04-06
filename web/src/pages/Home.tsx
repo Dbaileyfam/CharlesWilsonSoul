@@ -54,9 +54,9 @@ export function Home() {
               <img
                 src={heroPortraitSrc}
                 alt="Charles Wilson"
-                width={400}
-                height={400}
-                className="aspect-square w-full max-w-[200px] rounded-2xl object-cover object-center opacity-100 ring-1 ring-white/25 sm:max-w-[220px] md:max-w-[240px] lg:max-w-[220px]"
+                width={480}
+                height={600}
+                className="h-auto w-full max-w-[180px] object-contain object-center opacity-100 [filter:drop-shadow(0_12px_32px_rgba(0,0,0,0.45))] sm:max-w-[220px] md:max-w-[240px] lg:max-w-[220px]"
                 loading="eager"
                 decoding="async"
               />
