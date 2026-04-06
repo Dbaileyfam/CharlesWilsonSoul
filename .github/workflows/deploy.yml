@@ -1,30 +1,29 @@
-# Publishes the Vite *build* into the docs/ folder on main.
+# Official GitHub Pages via Actions (no extra branch, no pushing to main).
 #
-# GitHub Pages (this is the reliable combo — avoids root index.html):
-#   Settings → Pages → Source: Deploy from a branch
-#   Branch: main
-#   Folder: /docs   ← NOT “/ (root)”. Root is only for local Vite dev (/src/main.tsx).
+# One-time: Repo → Settings → Pages → Build and deployment
+#   Set "Source" to **GitHub Actions** (not "Deploy from a branch").
+#   https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow
 #
-# Pushes that only change docs/ do not re-run this workflow (paths-ignore).
+# If the deploy job asks to approve the "github-pages" environment, approve it once.
 
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - 'docs/**'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: pages-docs
+  group: pages
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -42,9 +41,16 @@ jobs:
           test -f dist/index.html
           grep -qE 'assets/index-[^ ]+\.js' dist/index.html
           ! grep -q '/src/main.tsx' dist/index.html
-      - uses: peaceiris/actions-gh-pages@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: main
-          destination_dir: docs
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
