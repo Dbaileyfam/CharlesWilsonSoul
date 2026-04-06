@@ -51,12 +51,13 @@ export function Home() {
               </div>
             </div>
             <div className="flex shrink-0 justify-center lg:justify-end lg:pt-2">
+              {/* mix-blend-multiply: knocks out flat white in the PNG so the page shows through */}
               <img
                 src={heroPortraitSrc}
                 alt="Charles Wilson"
-                width={480}
-                height={600}
-                className="h-auto w-full max-w-[180px] object-contain object-center opacity-100 [filter:drop-shadow(0_12px_32px_rgba(0,0,0,0.45))] sm:max-w-[220px] md:max-w-[240px] lg:max-w-[220px]"
+                width={600}
+                height={750}
+                className="h-auto w-full max-w-[280px] object-contain object-center mix-blend-multiply brightness-[1.08] contrast-[1.06] sm:max-w-[340px] md:max-w-[400px] lg:max-w-[380px]"
                 loading="eager"
                 decoding="async"
               />
