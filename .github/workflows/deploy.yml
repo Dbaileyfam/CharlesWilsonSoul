@@ -1,22 +1,26 @@
-# Pairs with: Settings → Pages → Source: Deploy from a branch → gh-pages / (root)
-# Each push to main rebuilds and updates the gh-pages branch.
+# Publishes the Vite *build* into the docs/ folder on main.
 #
-# If the site is blank: Pages is probably still on "main" + "/". Main serves
-# index.html with /src/main.tsx (TSX won't run in the browser). You must
-# select branch "gh-pages" and click Save. Check: .../assets/*.js should return 200.
+# GitHub Pages (this is the reliable combo — avoids root index.html):
+#   Settings → Pages → Source: Deploy from a branch
+#   Branch: main
+#   Folder: /docs   ← NOT “/ (root)”. Root is only for local Vite dev (/src/main.tsx).
+#
+# Pushes that only change docs/ do not re-run this workflow (paths-ignore).
 
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'docs/**'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: gh-pages
+  group: pages-docs
   cancel-in-progress: true
 
 jobs:
@@ -36,10 +40,11 @@ jobs:
       - name: Verify build output
         run: |
           test -f dist/index.html
-          grep -q 'assets/index-.*\.js' dist/index.html || (echo 'dist/index.html missing hashed bundle script'; exit 1)
-          grep -q '/src/main.tsx' dist/index.html && exit 1 || true
+          grep -qE 'assets/index-[^ ]+\.js' dist/index.html
+          ! grep -q '/src/main.tsx' dist/index.html
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: gh-pages
+          publish_branch: main
+          destination_dir: docs
