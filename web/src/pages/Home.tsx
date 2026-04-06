@@ -56,7 +56,7 @@ export function Home() {
                 alt="Charles Wilson"
                 width={800}
                 height={1000}
-                className="h-auto w-full max-w-[min(92vw,340px)] object-contain object-center mix-blend-multiply brightness-[1.07] contrast-[1.05] [filter:drop-shadow(0_16px_40px_rgba(0,0,0,0.45))] sm:max-w-[400px] md:max-w-[460px] lg:max-w-[440px]"
+                className="h-auto w-full max-w-[min(92vw,340px)] object-contain object-center opacity-100 sm:max-w-[400px] md:max-w-[460px] lg:max-w-[440px]"
                 loading="eager"
                 decoding="async"
               />
