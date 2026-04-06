@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 
+const bandBannerSrc = `${import.meta.env.BASE_URL}images/charles-wilson-band-banner.png`
+
 export function Home() {
   return (
     <>
@@ -13,37 +15,52 @@ export function Home() {
           }}
         />
         <div className="relative mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-gold">
-            Live soul & blues
-          </p>
-          <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream md:text-6xl lg:text-7xl">
-            Charles Wilson
-          </h1>
-          <p className="mt-4 max-w-xl text-lg text-cream/75 md:text-xl">
-            The Crown Prince of Soul — with{' '}
-            <span className="text-cream">The Soul Town Sinners</span>.
-            Retro soul, blues, and stage energy built for rooms that want to
-            feel something real.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              to="/events"
-              className="inline-flex items-center justify-center rounded-full bg-gold px-7 py-3 text-sm font-semibold text-ink transition hover:bg-gold-dim"
-            >
-              Upcoming dates
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3 text-sm font-semibold text-cream transition hover:border-gold/50 hover:text-gold"
-            >
-              Book the band
-            </Link>
-            <Link
-              to="/epk"
-              className="inline-flex items-center justify-center rounded-full border border-transparent px-2 py-3 text-sm font-medium text-gold underline-offset-4 hover:underline"
-            >
-              Press kit (EPK)
-            </Link>
+          <div className="flex flex-col items-stretch gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
+            <div className="min-w-0 max-w-2xl flex-1">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-gold">
+                Live soul & blues
+              </p>
+              <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream md:text-6xl lg:text-7xl">
+                Charles Wilson
+              </h1>
+              <p className="mt-4 max-w-xl text-lg text-cream/75 md:text-xl">
+                The Crown Prince of Soul — with{' '}
+                <span className="text-cream">The Soul Town Sinners</span>.
+                Retro soul, blues, and stage energy built for rooms that want
+                to feel something real.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  to="/events"
+                  className="inline-flex items-center justify-center rounded-full bg-gold px-7 py-3 text-sm font-semibold text-ink transition hover:bg-gold-dim"
+                >
+                  Upcoming dates
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3 text-sm font-semibold text-cream transition hover:border-gold/50 hover:text-gold"
+                >
+                  Book the band
+                </Link>
+                <Link
+                  to="/epk"
+                  className="inline-flex items-center justify-center rounded-full border border-transparent px-2 py-3 text-sm font-medium text-gold underline-offset-4 hover:underline"
+                >
+                  Press kit (EPK)
+                </Link>
+              </div>
+            </div>
+            <div className="flex shrink-0 justify-center lg:justify-end lg:pt-2">
+              <img
+                src={bandBannerSrc}
+                alt="Charles Wilson & The Soul Town Sinners"
+                width={640}
+                height={256}
+                className="h-auto w-full max-w-[220px] object-contain opacity-100 ring-1 ring-white/25 sm:max-w-[260px] md:max-w-[300px] lg:max-w-[280px]"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
           </div>
         </div>
       </section>
