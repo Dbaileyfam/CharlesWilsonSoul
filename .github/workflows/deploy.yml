@@ -1,6 +1,9 @@
-# Requires one-time setup: Settings → Pages → Build and deployment → Source: GitHub Actions
-# https://github.com/Dbaileyfam/CharlesWilsonSoul/settings/pages
-# If deploy fails with "Ensure GitHub Pages has been enabled", complete that step, then re-run the workflow.
+# Builds the Vite app and pushes static files to branch `gh-pages`.
+#
+# GitHub Pages: Settings → Pages → Build and deployment → Source: Deploy from a branch
+#   Branch: gh-pages   Folder: / (root)
+#
+# Do NOT use "main" + root for this project — main holds source code, not the built site.
 
 name: Deploy to GitHub Pages
 
@@ -10,16 +13,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: gh-pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,16 +33,8 @@ jobs:
           GITHUB_PAGES: 'true'
           GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
         run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - uses: peaceiris/actions-gh-pages@v4
         with:
-          path: dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
