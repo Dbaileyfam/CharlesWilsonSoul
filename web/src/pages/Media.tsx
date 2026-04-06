@@ -94,14 +94,24 @@ export function Media() {
         <p className="mt-2 text-sm text-cream/60">
           Follow for show announcements and behind-the-scenes.
         </p>
-        <a
-          href={social.facebook}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-6 inline-flex rounded-full bg-white/10 px-6 py-2.5 text-sm font-semibold text-cream transition hover:bg-gold hover:text-ink"
-        >
-          Facebook — The Crown Prince of Soul
-        </a>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a
+            href={social.facebook}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex rounded-full bg-white/10 px-6 py-2.5 text-sm font-semibold text-cream transition hover:bg-gold hover:text-ink"
+          >
+            Facebook — The Crown Prince of Soul
+          </a>
+          <a
+            href={social.instagram}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex rounded-full bg-white/10 px-6 py-2.5 text-sm font-semibold text-cream transition hover:bg-gold hover:text-ink"
+          >
+            Instagram — @lastsoulmanstanding
+          </a>
+        </div>
       </section>
     </div>
   )

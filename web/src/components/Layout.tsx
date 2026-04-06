@@ -65,6 +65,14 @@ export function Layout() {
               Facebook
             </a>
             <a
+              href={social.instagram}
+              target="_blank"
+              rel="noreferrer"
+              className="text-cream/70 transition-colors hover:text-gold"
+            >
+              Instagram
+            </a>
+            <a
               href={social.soundcloud}
               target="_blank"
               rel="noreferrer"
