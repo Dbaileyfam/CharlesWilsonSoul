@@ -1,5 +1,9 @@
 # Pairs with: Settings → Pages → Source: Deploy from a branch → gh-pages / (root)
 # Each push to main rebuilds and updates the gh-pages branch.
+#
+# If the site is blank: Pages is probably still on "main" + "/". Main serves
+# index.html with /src/main.tsx (TSX won't run in the browser). You must
+# select branch "gh-pages" and click Save. Check: .../assets/*.js should return 200.
 
 name: Deploy to GitHub Pages
 
@@ -29,6 +33,11 @@ jobs:
           GITHUB_PAGES: 'true'
           GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
         run: npm run build
+      - name: Verify build output
+        run: |
+          test -f dist/index.html
+          grep -q 'assets/index-.*\.js' dist/index.html || (echo 'dist/index.html missing hashed bundle script'; exit 1)
+          grep -q '/src/main.tsx' dist/index.html && exit 1 || true
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
