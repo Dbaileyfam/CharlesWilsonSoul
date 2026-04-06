@@ -7,9 +7,14 @@ import { Events } from './pages/Events'
 import { Home } from './pages/Home'
 import { Media } from './pages/Media'
 
+const routerBasename =
+  import.meta.env.BASE_URL === '/'
+    ? undefined
+    : import.meta.env.BASE_URL.replace(/\/$/, '')
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename}>
       <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
