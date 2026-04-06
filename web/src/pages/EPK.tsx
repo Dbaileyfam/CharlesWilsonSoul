@@ -23,7 +23,50 @@ const assetRow = (
   </div>
 )
 
+function RiderRow({
+  title,
+  description,
+  href,
+  fileLabel,
+}: {
+  title: string
+  description: string
+  href: string
+  fileLabel: string
+}) {
+  return (
+    <details className="group border-b border-white/10 py-4 last:border-0 [&_summary::-webkit-details-marker]:hidden">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left">
+        <div>
+          <p className="font-medium text-cream">{title}</p>
+          <p className="mt-1 text-sm text-cream/50">{description}</p>
+        </div>
+        <span
+          className="shrink-0 text-gold transition-transform duration-200 group-open:rotate-180"
+          aria-hidden
+        >
+          ▼
+        </span>
+      </summary>
+      <div className="mt-4 border-l-2 border-gold/40 pl-4">
+        <a
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex text-sm font-semibold text-gold underline-offset-4 hover:underline"
+        >
+          {fileLabel}
+        </a>
+      </div>
+    </details>
+  )
+}
+
 export function EPK() {
+  const base = import.meta.env.BASE_URL
+  const hospitalityPdf = `${base}epk/hospitality-rider.pdf`
+  const techDocx = `${base}epk/tech-rider.docx`
+
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
       <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
@@ -34,8 +77,7 @@ export function EPK() {
       </h1>
       <p className="mt-4 max-w-2xl text-cream/65">
         One-pagers, approved bios, and production details for Charles Wilson
-        and The Soul Town Sinners. Swap “coming soon” rows for download links
-        when PDFs and photo packs are ready.
+        and The Soul Town Sinners.
       </p>
 
       <div className="mt-14 grid gap-12 lg:grid-cols-5">
@@ -62,7 +104,7 @@ export function EPK() {
           <div className="rounded-2xl border border-white/10 bg-burgundy/15 p-8 md:p-10">
             <h2 className="font-display text-2xl text-cream">Downloads</h2>
             <p className="mt-2 text-sm text-cream/55">
-              Wire these to static files in <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs">public/</code> when available.
+              Tap a rider to open the download link.
             </p>
             <div className="mt-4">
               {assetRow(
@@ -75,11 +117,29 @@ export function EPK() {
                 'Press-approved portraits & live shots',
                 'soon',
               )}
-              {assetRow(
-                'Stage plot / input list',
-                'For FOH and festival production',
-                'soon',
-              )}
+              <div className="border-b border-white/10 py-5">
+                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                  Production riders
+                </h3>
+                <p className="mt-2 text-sm text-cream/50">
+                  Hospitality and technical requirements for The Soul Town
+                  Sinners.
+                </p>
+                <div className="mt-2">
+                  <RiderRow
+                    title="Hospitality rider"
+                    description="Dressing room, meals, and guest list notes."
+                    href={hospitalityPdf}
+                    fileLabel="Download hospitality rider (PDF)"
+                  />
+                  <RiderRow
+                    title="Tech rider"
+                    description="Stage plot, inputs, and production specs."
+                    href={techDocx}
+                    fileLabel="Download tech rider (DOCX)"
+                  />
+                </div>
+              </div>
               {assetRow(
                 'Logos & wordmarks',
                 'Vector and PNG on dark / light',
