@@ -1,12 +1,5 @@
-# Publishes the built site with GitHub’s “Actions” Pages mode.
-#
-# Setup (no gh-pages branch needed):
-# 1. Repo → Settings → Pages
-# 2. Under “Build and deployment”, open the “Source” dropdown
-# 3. Select “GitHub Actions” — NOT “Deploy from a branch”
-# 4. If GitHub shows workflow suggestions, pick “Deploy to GitHub Pages” or re-run Actions
-#
-# https://github.com/Dbaileyfam/CharlesWilsonSoul/settings/pages
+# Pairs with: Settings → Pages → Source: Deploy from a branch → gh-pages / (root)
+# Each push to main rebuilds and updates the gh-pages branch.
 
 name: Deploy to GitHub Pages
 
@@ -16,16 +9,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: gh-pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -38,16 +29,8 @@ jobs:
           GITHUB_PAGES: 'true'
           GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
         run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - uses: peaceiris/actions-gh-pages@v4
         with:
-          path: dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
