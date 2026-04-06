@@ -1,8 +1,13 @@
+# Requires one-time setup: Settings → Pages → Build and deployment → Source: GitHub Actions
+# https://github.com/Dbaileyfam/CharlesWilsonSoul/settings/pages
+# If deploy fails with "Ensure GitHub Pages has been enabled", complete that step, then re-run the workflow.
+
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -25,6 +30,7 @@ jobs:
       - run: npm ci
       - env:
           GITHUB_PAGES: 'true'
+          GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
         run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
