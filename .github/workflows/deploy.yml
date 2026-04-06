@@ -1,4 +1,6 @@
 # Official GitHub Pages via Actions (no extra branch, no pushing to main).
+# App lives in web/ so the repo root has no index.html — branch-based Pages
+# can’t accidentally serve the Vite dev entry (/src/main.tsx).
 #
 # One-time: Repo → Settings → Pages → Build and deployment
 #   Set "Source" to **GitHub Actions** (not "Deploy from a branch").
