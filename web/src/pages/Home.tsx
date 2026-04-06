@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const bandBannerSrc = `${import.meta.env.BASE_URL}images/charles-wilson-band-banner.png`
+const heroPortraitSrc = `${import.meta.env.BASE_URL}images/charles-wilson-hero.png`
 
 export function Home() {
   return (
@@ -52,11 +52,11 @@ export function Home() {
             </div>
             <div className="flex shrink-0 justify-center lg:justify-end lg:pt-2">
               <img
-                src={bandBannerSrc}
-                alt="Charles Wilson & The Soul Town Sinners"
-                width={640}
-                height={256}
-                className="h-auto w-full max-w-[220px] object-contain opacity-100 ring-1 ring-white/25 sm:max-w-[260px] md:max-w-[300px] lg:max-w-[280px]"
+                src={heroPortraitSrc}
+                alt="Charles Wilson"
+                width={400}
+                height={400}
+                className="aspect-square w-full max-w-[200px] rounded-2xl object-cover object-center opacity-100 ring-1 ring-white/25 sm:max-w-[220px] md:max-w-[240px] lg:max-w-[220px]"
                 loading="eager"
                 decoding="async"
               />
