@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { social } from '../data/links'
+
+const BOOKING_EMAIL = 'booking@801familystudios.com'
 
 export function Contact() {
   const [sent, setSent] = useState(false)
@@ -20,7 +21,7 @@ export function Contact() {
         String(data.get('message') || ''),
       ].join('\n'),
     )
-    window.location.href = `mailto:booking@example.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:${BOOKING_EMAIL}?subject=${subject}&body=${body}`
     setSent(true)
   }
 
@@ -33,37 +34,33 @@ export function Contact() {
         Contact
       </h1>
       <p className="mt-4 max-w-2xl text-cream/65">
-        Reach out for festivals, clubs, private events, and press. Replace the
-        placeholder email in this page with the client&apos;s real address when
-        ready.
+        Reach out for festivals, clubs, private events, and press.
       </p>
 
       <div className="mt-14 grid gap-12 lg:grid-cols-2">
         <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-10">
           <h2 className="text-sm font-semibold uppercase tracking-wider text-cream">
-            Direct lines
+            Booking
           </h2>
-          <p className="mt-4 text-cream/70">
-            <span className="text-cream/50">Bandstand Entertainment</span>
-            <br />
+          <p className="mt-4 leading-relaxed text-cream/75">
+            For all booking inquiries, email{' '}
             <a
-              href="tel:+19014090081"
-              className="font-display text-2xl text-gold hover:underline"
+              href={`mailto:${BOOKING_EMAIL}`}
+              className="font-medium text-gold underline-offset-2 hover:underline"
             >
-              901.409.0081
-            </a>
-          </p>
-          <p className="mt-6 text-sm text-cream/55">
-            Listed on{' '}
+              {BOOKING_EMAIL}
+            </a>{' '}
+            or call{' '}
             <a
-              href={social.bandstand}
-              target="_blank"
-              rel="noreferrer"
-              className="text-gold hover:underline"
+              href="tel:+18019186782"
+              className="font-medium text-gold underline-offset-2 hover:underline"
             >
-              Bandstand Entertainment — Charles Wilson
+              801-918-6782
             </a>
             .
+          </p>
+          <p className="mt-6 font-display text-lg text-cream/90">
+            801 Family studios
           </p>
         </div>
 
@@ -132,15 +129,14 @@ export function Contact() {
           </button>
           {sent ? (
             <p className="mt-4 text-left text-sm text-cream/55">
-              If your mail app did not open, set a real address in{' '}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs">
-                Contact.tsx
-              </code>{' '}
-              (search for{' '}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs">
-                booking@example.com
-              </code>
-              ).
+              If your mail app did not open, copy{' '}
+              <a
+                href={`mailto:${BOOKING_EMAIL}`}
+                className="text-gold hover:underline"
+              >
+                {BOOKING_EMAIL}
+              </a>
+              .
             </p>
           ) : null}
         </form>
