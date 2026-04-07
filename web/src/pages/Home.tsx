@@ -25,7 +25,7 @@ export function Home() {
                 Charles Wilson
               </h1>
               <p className="mt-4 max-w-xl text-lg text-cream/75 md:text-xl">
-                The Crown Prince of Soul — with{' '}
+                The Crown Prince of Soul and{' '}
                 <span className="text-cream">The Soul Town Sinners</span>.
                 Retro soul, blues, and stage energy built for rooms that want
                 to feel something real.
