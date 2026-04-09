@@ -276,20 +276,41 @@ export function EPK() {
       <section className="mt-16 rounded-2xl border border-white/10 p-8 md:p-10">
         <h2 className="font-display text-2xl text-cream">Booking & representation</h2>
         <p className="mt-3 max-w-2xl text-cream/65">
-          For private events and agency routing, Bandstand Entertainment lists
-          Charles Wilson as a premiere entertainer — use the link below for
-          routing.
+          For festivals, clubs, private events, and press routing, contact 801
+          Family Studios.
         </p>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <a
-            href={social.bandstand}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex rounded-full border border-gold/40 px-6 py-2.5 text-sm font-semibold text-gold transition hover:bg-gold hover:text-ink"
-          >
-            Bandstand Entertainment
-          </a>
-        </div>
+        <p className="mt-6 font-display text-xl text-cream/90">Michael Bailey</p>
+        <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-gold">
+          801 Family Studios
+        </p>
+        <ul className="mt-6 space-y-3 text-cream/80">
+          <li>
+            <a
+              href="mailto:booking@801familystudios.com"
+              className="font-medium text-gold underline-offset-2 hover:underline"
+            >
+              booking@801familystudios.com
+            </a>
+          </li>
+          <li>
+            <a
+              href="tel:+18019186782"
+              className="font-medium text-gold underline-offset-2 hover:underline"
+            >
+              801-918-6782
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.801familystudios.com"
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium text-gold underline-offset-2 hover:underline"
+            >
+              www.801familystudios.com
+            </a>
+          </li>
+        </ul>
       </section>
     </div>
   )
