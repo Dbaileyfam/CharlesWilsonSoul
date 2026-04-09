@@ -6,28 +6,6 @@ import {
 import { epkPressPhotos } from '../data/epkPressPhotos'
 import { social } from '../data/links'
 
-const assetRow = (
-  label: string,
-  detail: string,
-  status: 'ready' | 'soon',
-) => (
-  <div className="flex flex-col gap-2 border-b border-white/10 py-5 last:border-0 sm:flex-row sm:items-center sm:justify-between">
-    <div>
-      <p className="font-medium text-cream">{label}</p>
-      <p className="text-sm text-cream/50">{detail}</p>
-    </div>
-    <span
-      className={
-        status === 'ready'
-          ? 'text-xs font-semibold uppercase tracking-wider text-gold'
-          : 'text-xs font-semibold uppercase tracking-wider text-cream/40'
-      }
-    >
-      {status === 'ready' ? 'On request' : 'Coming soon'}
-    </span>
-  </div>
-)
-
 function RiderRow({
   title,
   description,
@@ -69,6 +47,7 @@ function RiderRow({
 
 export function EPK() {
   const base = import.meta.env.BASE_URL
+  const oneSheetPdf = `${base}epk/charles-wilson-one-sheet.pdf`
   const hospitalityPdf = `${base}epk/hospitality-rider.pdf`
   const techDocx = `${base}epk/tech-rider.docx`
   const bandTitleBannerPng = `${base}epk/charles-wilson-band-title-banner.png`
@@ -113,11 +92,24 @@ export function EPK() {
               Tap a rider to open the download link.
             </p>
             <div className="mt-4">
-              {assetRow(
-                'EPK PDF',
-                'Bio, credits, highlights, contact block',
-                'soon',
-              )}
+              <div className="border-b border-white/10 py-5">
+                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                  One sheet
+                </h3>
+                <p className="mt-2 text-sm text-cream/50">
+                  Promotional one-sheet (Sept. 2017) — bio, credits, highlights,
+                  and contact-friendly layout for bookers and press.
+                </p>
+                <a
+                  href={oneSheetPdf}
+                  target="_blank"
+                  rel="noreferrer"
+                  download="Charles-Wilson-One-Sheet-092117.pdf"
+                  className="mt-4 inline-flex text-sm font-semibold text-gold underline-offset-4 hover:underline"
+                >
+                  Open / download PDF
+                </a>
+              </div>
               <div className="border-b border-white/10 py-5">
                 <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
                   Press photos
