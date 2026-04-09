@@ -34,9 +34,11 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
+      # Custom domain (see public/CNAME) serves the site at /. A project-path base
+      # like /RepoName/ breaks the app on the apex domain (blank page: JS/CSS 404).
       - env:
           GITHUB_PAGES: 'true'
-          GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
+          GITHUB_PAGES_BASE: /
         run: npm run build
       - name: Verify build output
         run: |
