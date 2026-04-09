@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { social } from '../data/links'
 
 const assetRow = (
@@ -154,8 +153,8 @@ export function EPK() {
         <h2 className="font-display text-2xl text-cream">Booking & representation</h2>
         <p className="mt-3 max-w-2xl text-cream/65">
           For private events and agency routing, Bandstand Entertainment lists
-          Charles Wilson as a premiere entertainer — use the link below or the
-          contact form for routing.
+          Charles Wilson as a premiere entertainer — use the link below for
+          routing.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
           <a
@@ -166,12 +165,6 @@ export function EPK() {
           >
             Bandstand Entertainment
           </a>
-          <Link
-            to="/contact"
-            className="inline-flex rounded-full bg-white/10 px-6 py-2.5 text-sm font-semibold text-cream transition hover:bg-gold hover:text-ink"
-          >
-            Contact form
-          </Link>
         </div>
       </section>
     </div>
