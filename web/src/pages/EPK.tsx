@@ -70,6 +70,7 @@ export function EPK() {
   const base = import.meta.env.BASE_URL
   const hospitalityPdf = `${base}epk/hospitality-rider.pdf`
   const techDocx = `${base}epk/tech-rider.docx`
+  const bandTitleBannerPng = `${base}epk/charles-wilson-band-title-banner.png`
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
@@ -144,11 +145,34 @@ export function EPK() {
                   />
                 </div>
               </div>
-              {assetRow(
-                'Logos & wordmarks',
-                'Vector and PNG on dark / light',
-                'soon',
-              )}
+              <div className="py-5">
+                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                  Logos & wordmarks
+                </h3>
+                <p className="mt-2 text-sm text-cream/50">
+                  Primary horizontal banner — black & white, Charles Wilson &
+                  The Soul Town Sinners. Right-click or use download for print
+                  and web.
+                </p>
+                <div className="mt-5 rounded-xl border border-white/15 bg-black/30 p-4 ring-1 ring-white/10">
+                  <img
+                    src={bandTitleBannerPng}
+                    alt="Charles Wilson & The Soul Town Sinners — wordmark banner"
+                    width={1200}
+                    height={400}
+                    className="mx-auto h-auto w-full max-w-3xl object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <a
+                  href={bandTitleBannerPng}
+                  download="charles-wilson-soul-town-sinners-banner.png"
+                  className="mt-4 inline-flex text-sm font-semibold text-gold underline-offset-4 hover:underline"
+                >
+                  Download banner (PNG)
+                </a>
+              </div>
             </div>
           </div>
         </div>
