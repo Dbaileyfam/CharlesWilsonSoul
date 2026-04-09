@@ -97,8 +97,8 @@ export function EPK() {
                   One sheet
                 </h3>
                 <p className="mt-2 text-sm text-cream/50">
-                  Promotional one-sheet (Sept. 2017) — bio, credits, highlights,
-                  and contact-friendly layout for bookers and press.
+                  Promotional one-sheet — bio, credits, highlights, and
+                  contact-friendly layout for bookers and press.
                 </p>
                 <a
                   href={oneSheetPdf}
