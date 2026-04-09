@@ -88,14 +88,6 @@ export function Layout() {
             >
               YouTube
             </a>
-            <a
-              href={social.bandstand}
-              target="_blank"
-              rel="noreferrer"
-              className="text-cream/70 transition-colors hover:text-gold"
-            >
-              Bandstand
-            </a>
           </div>
         </div>
         <p className="border-t border-white/5 py-4 text-center text-xs text-cream/40">
