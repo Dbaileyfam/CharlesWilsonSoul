@@ -1,5 +1,8 @@
 import { PressLinks } from '../components/PressLinks'
-import { FEATURED_YOUTUBE_EMBED_SRC } from '../data/media'
+import {
+  FEATURED_YOUTUBE_EMBED_SRC,
+  SOUNDCLOUD_EMBED_SRC,
+} from '../data/media'
 import { social } from '../data/links'
 
 export function Media() {
@@ -70,7 +73,7 @@ export function Media() {
               scrolling="no"
               frameBorder="no"
               allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/thecrownprinceofsoul&color=%23c9a962&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+              src={SOUNDCLOUD_EMBED_SRC}
             />
           </div>
           <a

@@ -1,5 +1,8 @@
 import { PressLinks } from '../components/PressLinks'
-import { FEATURED_YOUTUBE_EMBED_SRC } from '../data/media'
+import {
+  FEATURED_YOUTUBE_EMBED_SRC,
+  SOUNDCLOUD_EMBED_SRC,
+} from '../data/media'
 import { social } from '../data/links'
 
 const assetRow = (
@@ -175,6 +178,41 @@ export function EPK() {
             allowFullScreen
           />
         </div>
+      </section>
+
+      <section
+        className="mt-12 rounded-2xl border border-white/10 bg-black/20 p-8 md:p-10"
+        aria-labelledby="epk-soundcloud-heading"
+      >
+        <h2
+          id="epk-soundcloud-heading"
+          className="text-xs font-semibold uppercase tracking-[0.25em] text-gold"
+        >
+          SoundCloud
+        </h2>
+        <p className="mt-2 text-sm text-cream/55">
+          Same player as on the Media page — stream tracks and sets from the
+          Crown Prince of Soul.
+        </p>
+        <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-2">
+          <iframe
+            title="SoundCloud — thecrownprinceofsoul"
+            width="100%"
+            height={380}
+            scrolling="no"
+            frameBorder="no"
+            allow="autoplay"
+            src={SOUNDCLOUD_EMBED_SRC}
+          />
+        </div>
+        <a
+          href={social.soundcloud}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-4 inline-block text-sm font-semibold text-gold hover:underline"
+        >
+          Open on SoundCloud →
+        </a>
       </section>
 
       <div className="mt-16">
