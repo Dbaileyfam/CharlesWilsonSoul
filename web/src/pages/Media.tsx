@@ -10,8 +10,7 @@ export function Media() {
         Media
       </h1>
       <p className="mt-4 max-w-2xl text-cream/65">
-        Official channels and performance archives. Swap in specific video or
-        track embeds anytime — the layout is ready for iframes.
+        Featured performance, official channels, and streaming links.
       </p>
 
       <div className="mt-14 grid gap-10 lg:grid-cols-2">
@@ -20,25 +19,18 @@ export function Media() {
             YouTube
           </h2>
           <p className="mt-2 text-sm text-cream/55">
-            Performance and feature clips — add a featured video ID below when
-            you have a primary reel.
+            Featured performance — watch on YouTube or open the channel links
+            below.
           </p>
-          <div className="mt-6 flex aspect-video flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-white/20 bg-black/30 p-8 text-center">
-            <p className="max-w-sm text-sm text-cream/55">
-              Drop in a featured performance: replace this block with a YouTube
-              <code className="mx-1 rounded bg-white/10 px-1.5 py-0.5 text-xs">
-                embed
-              </code>{' '}
-              URL in <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs">Media.tsx</code>.
-            </p>
-            <a
-              href={social.youtubeCharlesWilson}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-gold-dim"
-            >
-              Open YouTube
-            </a>
+          <div className="mt-6 aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+            <iframe
+              className="h-full w-full"
+              src="https://www.youtube.com/embed/n0dAziTRlr0?si=apuRWePC5AgoogCX"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
