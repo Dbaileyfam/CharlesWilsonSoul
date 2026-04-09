@@ -1,3 +1,4 @@
+import { PressLinks } from '../components/PressLinks'
 import { social } from '../data/links'
 
 export function Media() {
@@ -10,7 +11,8 @@ export function Media() {
         Media
       </h1>
       <p className="mt-4 max-w-2xl text-cream/65">
-        Featured performance, official channels, and streaming links.
+        Featured performance, press coverage, official channels, and
+        streaming links.
       </p>
 
       <div className="mt-14 grid gap-10 lg:grid-cols-2">
@@ -79,6 +81,10 @@ export function Media() {
             Open on SoundCloud →
           </a>
         </section>
+      </div>
+
+      <div className="mt-16">
+        <PressLinks />
       </div>
 
       <section className="mt-16 rounded-2xl border border-white/10 bg-burgundy/20 p-8 md:p-10">

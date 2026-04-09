@@ -1,3 +1,4 @@
+import { PressLinks } from '../components/PressLinks'
 import { social } from '../data/links'
 
 const assetRow = (
@@ -147,6 +148,10 @@ export function EPK() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="mt-16">
+        <PressLinks variant="epk" />
       </div>
 
       <section className="mt-16 rounded-2xl border border-white/10 p-8 md:p-10">
