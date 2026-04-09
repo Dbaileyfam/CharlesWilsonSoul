@@ -104,7 +104,7 @@ export function EPK() {
                   href={oneSheetPdf}
                   target="_blank"
                   rel="noreferrer"
-                  download="Charles-Wilson-One-Sheet-092117.pdf"
+                  download="Charles-Wilson-One-Sheet.pdf"
                   className="mt-4 inline-flex text-sm font-semibold text-gold underline-offset-4 hover:underline"
                 >
                   Open / download PDF
