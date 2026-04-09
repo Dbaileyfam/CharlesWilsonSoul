@@ -3,6 +3,7 @@ import {
   FEATURED_YOUTUBE_EMBED_SRC,
   SOUNDCLOUD_EMBED_SRC,
 } from '../data/media'
+import { epkPressPhotos } from '../data/epkPressPhotos'
 import { social } from '../data/links'
 
 const assetRow = (
@@ -117,11 +118,48 @@ export function EPK() {
                 'Bio, credits, highlights, contact block',
                 'soon',
               )}
-              {assetRow(
-                'Hi-res photos',
-                'Press-approved portraits & live shots',
-                'soon',
-              )}
+              <div className="border-b border-white/10 py-5">
+                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                  Press photos
+                </h3>
+                <p className="mt-2 text-sm text-cream/50">
+                  Approved promotional portraits — PNG downloads for web and
+                  print. Photo 4: Chicago Blues Hall of Fame induction (Sept.
+                  2019); image includes photographer credit in frame.
+                </p>
+                <div className="mt-6 grid gap-6 sm:grid-cols-2">
+                  {epkPressPhotos.map((photo) => {
+                    const src = `${base}epk/${photo.file}`
+                    return (
+                      <figure
+                        key={photo.file}
+                        className="overflow-hidden rounded-xl border border-white/15 bg-black/40 ring-1 ring-white/10"
+                      >
+                        <div className="flex max-h-[min(70vh,28rem)] items-center justify-center bg-black/50 p-2">
+                          <img
+                            src={src}
+                            alt={photo.alt}
+                            width={800}
+                            height={1000}
+                            className="max-h-[min(70vh,28rem)] w-full object-contain"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+                        <figcaption className="border-t border-white/10 px-4 py-3">
+                          <a
+                            href={src}
+                            download={photo.downloadName}
+                            className="text-sm font-semibold text-gold underline-offset-4 hover:underline"
+                          >
+                            Download PNG
+                          </a>
+                        </figcaption>
+                      </figure>
+                    )
+                  })}
+                </div>
+              </div>
               <div className="border-b border-white/10 py-5">
                 <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
                   Production riders
