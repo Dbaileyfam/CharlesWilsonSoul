@@ -1,4 +1,5 @@
 import { PressLinks } from '../components/PressLinks'
+import { FEATURED_YOUTUBE_EMBED_SRC } from '../data/media'
 import { social } from '../data/links'
 
 export function Media() {
@@ -27,7 +28,7 @@ export function Media() {
           <div className="mt-6 aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
             <iframe
               className="h-full w-full"
-              src="https://www.youtube.com/embed/n0dAziTRlr0?si=apuRWePC5AgoogCX"
+              src={FEATURED_YOUTUBE_EMBED_SRC}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"

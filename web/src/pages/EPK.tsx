@@ -1,4 +1,5 @@
 import { PressLinks } from '../components/PressLinks'
+import { FEATURED_YOUTUBE_EMBED_SRC } from '../data/media'
 import { social } from '../data/links'
 
 const assetRow = (
@@ -149,6 +150,32 @@ export function EPK() {
           </div>
         </div>
       </div>
+
+      <section
+        className="mt-16 rounded-2xl border border-white/10 bg-black/20 p-8 md:p-10"
+        aria-labelledby="epk-video-heading"
+      >
+        <h2
+          id="epk-video-heading"
+          className="text-xs font-semibold uppercase tracking-[0.25em] text-gold"
+        >
+          Featured performance
+        </h2>
+        <p className="mt-2 text-sm text-cream/55">
+          Same featured clip as on the Media page — embed for reviewers and
+          bookers.
+        </p>
+        <div className="mx-auto mt-8 max-w-4xl aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+          <iframe
+            className="h-full w-full"
+            src={FEATURED_YOUTUBE_EMBED_SRC}
+            title="YouTube video player — Charles Wilson featured performance"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      </section>
 
       <div className="mt-16">
         <PressLinks variant="epk" />
