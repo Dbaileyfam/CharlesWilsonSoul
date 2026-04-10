@@ -52,7 +52,7 @@ export function Layout() {
           <div>
             <p className="font-display text-lg text-cream">Charles Wilson</p>
             <p className="mt-1 text-sm text-cream/60">
-              with The Soul Town Sinners
+              and The Soul Town Sinners
             </p>
           </div>
           <div className="flex flex-wrap gap-4 text-sm">
