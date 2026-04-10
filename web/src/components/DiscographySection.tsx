@@ -43,16 +43,6 @@ export function DiscographySection() {
                 {album.title}
               </h4>
               <p className="mt-1 text-sm text-cream/45">{album.label}</p>
-              {album.location ? (
-                <dl className="mt-4 space-y-2 border-t border-white/10 pt-4 text-sm text-cream/65">
-                  <div>
-                    <dt className="text-xs uppercase tracking-wider text-cream/40">
-                      Recorded
-                    </dt>
-                    <dd className="mt-0.5">{album.location}</dd>
-                  </div>
-                </dl>
-              ) : null}
             </article>
           ))}
         </div>
