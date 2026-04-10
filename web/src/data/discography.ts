@@ -17,7 +17,6 @@ export type SingleEntry = {
 export type CreditEntry = {
   work: string
   role: string
-  collaborators: string
 }
 
 export const discographyAlbums: AlbumEntry[] = [
@@ -177,27 +176,21 @@ export const discographyCredits: CreditEntry[] = [
   {
     work: 'Blues in the Key of C',
     role: 'Producer',
-    collaborators:
-      'Willie Clayton, Ronnie Hicks, Little Milton, Charles Wilson',
   },
   {
     work: 'Ecko-era albums',
     role: 'Writer / producer',
-    collaborators: 'John Ward, Earl Randle, Charles Wilson',
   },
   {
     work: 'If Heartaches Were Nickels',
     role: 'Performer / writer',
-    collaborators: 'Charles Wilson',
   },
   {
     work: 'Troubled Child',
     role: 'Performer / writer',
-    collaborators: 'Charles Wilson',
   },
   {
     work: 'Various Ecko compilations',
     role: 'Co-writer',
-    collaborators: 'Charles Wilson, Chuck Roberson',
   },
 ]

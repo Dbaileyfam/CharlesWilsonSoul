@@ -101,10 +101,6 @@ export function DiscographySection() {
             >
               <p className="font-display text-lg text-cream">{credit.work}</p>
               <p className="mt-1 text-sm font-medium text-gold">{credit.role}</p>
-              <p className="mt-3 text-sm leading-relaxed text-cream/60">
-                <span className="text-cream/40">With </span>
-                {credit.collaborators}
-              </p>
             </div>
           ))}
         </div>
