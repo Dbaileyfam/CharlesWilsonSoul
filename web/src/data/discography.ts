@@ -2,7 +2,6 @@ export type AlbumEntry = {
   year: number
   title: string
   label: string
-  producers: string
   location: string | null
 }
 
@@ -23,105 +22,90 @@ export const discographyAlbums: AlbumEntry[] = [
     year: 1991,
     title: 'Blues in the Key of C',
     label: 'Ichiban',
-    producers: 'Willie Clayton, Ronnie Hicks, Little Milton, Charles Wilson',
     location: 'Chicago, IL',
   },
   {
     year: 1995,
     title: "It's Sweet on the Backstreet",
     label: 'Ecko',
-    producers: 'Earl Randle, John Ward',
     location: 'Memphis, TN',
   },
   {
     year: 1997,
     title: 'Why?',
     label: 'Traction',
-    producers: 'Charles Wilson',
     location: null,
   },
   {
     year: 1998,
     title: 'Love Seat',
     label: 'Ecko',
-    producers: 'John Ward, Chuck Roberson, Charles Wilson',
     location: 'Memphis, TN',
   },
   {
     year: 1999,
     title: "It Ain't the Size",
     label: 'Ecko',
-    producers: 'John Ward',
     location: 'Memphis, TN',
   },
   {
     year: 2000,
     title: 'Mr. Freak',
     label: 'Ecko',
-    producers: 'John Ward',
     location: 'Memphis, TN',
   },
   {
     year: 2001,
     title: 'Songs from the Vault',
     label: 'Wilson Records',
-    producers: 'Charles Wilson',
     location: null,
   },
   {
     year: 2001,
     title: "Goin' Jookin'",
     label: 'Ecko',
-    producers: 'John Ward',
     location: 'Memphis, TN',
   },
   {
     year: 2002,
     title: 'You Got to Pay to Play',
     label: 'Wilson Records',
-    producers: 'Charles Wilson',
     location: null,
   },
   {
     year: 2004,
     title: 'If Heartaches Were Nickels',
     label: 'Delmark',
-    producers: 'Charles Wilson',
     location: 'Chicago, IL',
   },
   {
     year: 2005,
     title: "If It Ain't Broke Don't Fix It",
     label: 'Delta',
-    producers: 'Charles Wilson',
     location: null,
   },
   {
     year: 2007,
     title: 'The After Party',
     label: 'Severn',
-    producers: 'Charles Wilson',
     location: null,
   },
   {
     year: 2009,
     title: 'Troubled Child',
     label: 'Severn',
-    producers: 'Charles Wilson',
     location: null,
   },
   {
     year: 2010,
     title: 'That Girl Belongs to Me',
     label: 'Severn',
-    producers: 'Charles Wilson',
     location: null,
   },
   {
     year: 2011,
     title: 'Sweet & Sour Blues',
     label: '—',
-    producers: 'Charles Wilson',
     location: null,
   },
 ]
