@@ -10,7 +10,6 @@ export type SingleEntry = {
   year: string
   title: string
   label: string
-  writers: string
   notes: string
 }
 
@@ -132,42 +131,36 @@ export const discographySingles: SingleEntry[] = [
     year: '1984 (some sources list 1964)',
     title: 'Trying to Make a Wrong Thing Right',
     label: 'AlleyCat',
-    writers: 'Charles Wilson',
     notes: 'First single',
   },
   {
     year: '1980s',
     title: "You Cut Off My Love Supply / It's a Crying Shame",
     label: 'Ichiban',
-    writers: 'Charles Wilson',
     notes: 'Single',
   },
   {
     year: '1995',
     title: "It's Sweet on the Backstreet",
     label: 'Ecko',
-    writers: 'Earl Randle, John Ward',
     notes: 'Southern soul single',
   },
   {
     year: '1998',
     title: 'Love Seat',
     label: 'Ecko',
-    writers: 'John Ward, Charles Wilson, Chuck Roberson',
     notes: 'Southern soul single',
   },
   {
     year: '2000',
     title: 'Mr. Freak',
     label: 'Ecko',
-    writers: 'John Ward',
     notes: 'Southern soul single',
   },
   {
     year: '2009',
     title: 'Pay Myself First',
     label: 'Severn',
-    writers: 'Charles Wilson',
     notes: 'Modern soul single',
   },
 ]

@@ -78,10 +78,6 @@ export function DiscographySection() {
               <div className="min-w-0">
                 <p className="font-medium text-cream">{single.title}</p>
                 <p className="mt-0.5 text-sm text-cream/45">{single.label}</p>
-                <p className="mt-2 text-sm text-cream/55">
-                  <span className="text-cream/40">Writers / producers: </span>
-                  {single.writers}
-                </p>
               </div>
               <p className="text-sm text-cream/50 md:text-right md:max-w-[12rem]">
                 {single.notes}
