@@ -75,7 +75,7 @@ export const discographyAlbums: AlbumEntry[] = [
   {
     year: 2007,
     title: 'The After Party',
-    label: 'Severn',
+    label: 'CDS Records',
   },
   {
     year: 2009,
@@ -85,12 +85,12 @@ export const discographyAlbums: AlbumEntry[] = [
   {
     year: 2010,
     title: 'That Girl Belongs to Me',
-    label: 'Severn',
+    label: 'CDS Records',
   },
   {
     year: 2011,
     title: 'Sweet & Sour Blues',
-    label: '—',
+    label: 'CDS Records',
   },
 ]
 
