@@ -45,7 +45,7 @@ export function Home() {
                 </Link>
                 <Link
                   to="/epk"
-                  className="inline-flex items-center justify-center rounded-full border border-transparent px-2 py-3 text-sm font-medium text-gold underline-offset-4 hover:underline"
+                  className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3 text-sm font-semibold text-cream transition hover:border-gold/50 hover:text-gold"
                 >
                   Press kit (EPK)
                 </Link>
