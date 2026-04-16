@@ -128,7 +128,7 @@ export const discographySingles: SingleEntry[] = [
   {
     year: '2009',
     title: 'Pay Myself First',
-    label: 'Severn',
+    label: 'CDS Records',
     notes: 'Modern soul single',
   },
 ]
