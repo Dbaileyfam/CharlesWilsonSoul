@@ -6,42 +6,42 @@ import {
 import { epkPressPhotos } from '../data/epkPressPhotos'
 import { social } from '../data/links'
 
-function RiderRow({
+const heroPortraitSrc = `${import.meta.env.BASE_URL}images/charles-wilson-hero.png`
+
+function DownloadCard({
+  eyebrow,
   title,
   description,
   href,
   fileLabel,
+  download,
 }: {
+  eyebrow: string
   title: string
   description: string
   href: string
   fileLabel: string
+  download?: string
 }) {
   return (
-    <details className="group border-b border-white/10 py-4 last:border-0 [&_summary::-webkit-details-marker]:hidden">
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left">
-        <div>
-          <p className="font-medium text-cream">{title}</p>
-          <p className="mt-1 text-sm text-cream/50">{description}</p>
-        </div>
-        <span
-          className="shrink-0 text-gold transition-transform duration-200 group-open:rotate-180"
-          aria-hidden
-        >
-          ▼
-        </span>
-      </summary>
-      <div className="mt-4 border-l-2 border-gold/40 pl-4">
-        <a
-          href={href}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex text-sm font-semibold text-gold underline-offset-4 hover:underline"
-        >
-          {fileLabel}
-        </a>
-      </div>
-    </details>
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      download={download}
+      className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-left transition hover:border-gold/40 hover:bg-white/[0.05] md:p-8"
+    >
+      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+        {eyebrow}
+      </p>
+      <p className="mt-3 font-display text-2xl text-cream">{title}</p>
+      <p className="mt-2 text-sm leading-relaxed text-cream/55">
+        {description}
+      </p>
+      <span className="mt-auto inline-flex pt-6 text-sm font-semibold text-gold underline-offset-4 group-hover:underline">
+        {fileLabel}
+      </span>
+    </a>
   )
 }
 
@@ -53,250 +53,263 @@ export function EPK() {
   const bandTitleBannerPng = `${base}epk/charles-wilson-band-title-banner.png`
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
-      <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
-        For promoters & press
-      </p>
-      <h1 className="mt-3 font-display text-4xl font-medium text-cream md:text-5xl">
-        Electronic press kit
-      </h1>
-      <p className="mt-4 max-w-2xl text-cream/65">
-        One-pagers, approved bios, and production details for Charles Wilson
-        and The Soul Town Sinners.
-      </p>
+    <>
+      <section className="relative overflow-hidden border-b border-white/10">
+        <div
+          className="pointer-events-none absolute inset-0"
+          aria-hidden
+          style={{
+            background:
+              'radial-gradient(ellipse 55% 50% at 50% 42%, rgba(201, 169, 98, 0.18), transparent 60%), radial-gradient(ellipse 40% 35% at 50% 80%, rgba(92, 26, 40, 0.45), transparent 70%)',
+          }}
+        />
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-5 pb-16 pt-14 text-center md:pb-24 md:pt-20">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
+            Electronic press kit
+          </p>
+          <img
+            src={heroPortraitSrc}
+            alt="Charles Wilson"
+            width={800}
+            height={1000}
+            className="mt-8 h-auto w-full max-w-[min(78vw,380px)] object-contain"
+            loading="eager"
+            decoding="async"
+          />
+          <h1 className="mt-6 font-display text-5xl font-semibold leading-none tracking-tight text-cream md:text-7xl">
+            Charles Wilson
+          </h1>
+          <p className="mt-4 text-sm font-medium uppercase tracking-[0.28em] text-gold">
+            The Crown Prince of Soul
+          </p>
+          <p className="mt-5 max-w-xl text-lg text-cream/70">
+            and The Soul Town Sinners — bios, photos, and production details
+            for promoters and press.
+          </p>
+        </div>
+      </section>
 
-      <div className="mt-14 grid gap-12 lg:grid-cols-5">
-        <div className="lg:col-span-2">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
-            <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
-              Short bio
+      <section className="mx-auto max-w-2xl px-5 py-16 text-center md:py-24">
+        <h2 className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
+          Short bio
+        </h2>
+        <p className="mt-6 font-display text-2xl leading-snug text-cream md:text-3xl">
+          Charles Wilson delivers retro soul and blues with Chicago roots and
+          road-tested showmanship.
+        </p>
+        <p className="mt-6 leading-relaxed text-cream/70">
+          Backed by The Soul Town Sinners, his sets honor the lineage of
+          classic soul while staying immediate and electric for modern
+          audiences. He is the nephew of the late Little Milton, a nominee for
+          multiple Blues Music Awards and Blues Foundation honors, with
+          festival and club appearances across the U.S. and Europe.
+        </p>
+      </section>
+
+      <section className="border-t border-white/10">
+        <div className="mx-auto max-w-5xl px-5 py-16 md:py-24">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="font-display text-4xl font-medium text-cream md:text-5xl">
+              Downloads
             </h2>
-            <p className="mt-4 leading-relaxed text-cream/75">
-              Charles Wilson, known as the Crown Prince of Soul, delivers retro
-              soul and blues with Chicago roots and road-tested showmanship.
-              Backed by The Soul Town Sinners, his sets honor the lineage of
-              classic soul while staying immediate and electric for modern
-              audiences.
-            </p>
-            <p className="mt-4 leading-relaxed text-cream/75">
-              Nephew of the late Little Milton; nominated for multiple Blues
-              Music Awards and Blues Foundation honors; festival and club
-              appearances across the U.S. and Europe.
+            <p className="mt-4 text-cream/60">
+              One-sheet, approved photos, riders, and the band wordmark.
             </p>
           </div>
-        </div>
-        <div className="lg:col-span-3">
-          <div className="rounded-2xl border border-white/10 bg-burgundy/15 p-8 md:p-10">
-            <h2 className="font-display text-2xl text-cream">Downloads</h2>
-            <p className="mt-2 text-sm text-cream/55">
-              Tap a rider to open the download link.
+
+          <div className="mx-auto mt-12 grid max-w-4xl gap-4 md:grid-cols-3">
+            <DownloadCard
+              eyebrow="One sheet"
+              title="Promo sheet"
+              description="Bio, credits, highlights, and booking contact for bookers and press."
+              href={oneSheetPdf}
+              download="Charles-Wilson-One-Sheet.pdf"
+              fileLabel="Download PDF"
+            />
+            <DownloadCard
+              eyebrow="Hospitality"
+              title="Hospitality rider"
+              description="Dressing room, meals, and guest list notes for The Soul Town Sinners."
+              href={hospitalityPdf}
+              fileLabel="Download PDF"
+            />
+            <DownloadCard
+              eyebrow="Technical"
+              title="Tech rider"
+              description="Stage plot, inputs, and production specs."
+              href={techDocx}
+              fileLabel="Download DOCX"
+            />
+          </div>
+
+          <div className="mx-auto mt-16 max-w-4xl text-center">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+              Press photos
+            </h3>
+            <p className="mx-auto mt-3 max-w-xl text-sm text-cream/55">
+              Approved promotional portraits for web and print. Photo 4:
+              Chicago Blues Hall of Fame induction (Sept. 2019); photographer
+              credit is in the frame.
             </p>
-            <div className="mt-4">
-              <div className="border-b border-white/10 py-5">
-                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-                  One sheet
-                </h3>
-                <p className="mt-2 text-sm text-cream/50">
-                  Promotional one-sheet — bio, credits, highlights, and
-                  contact-friendly layout for bookers and press.
-                </p>
-                <a
-                  href={oneSheetPdf}
-                  target="_blank"
-                  rel="noreferrer"
-                  download="Charles-Wilson-One-Sheet.pdf"
-                  className="mt-4 inline-flex text-sm font-semibold text-gold underline-offset-4 hover:underline"
-                >
-                  Open / download PDF
-                </a>
-              </div>
-              <div className="border-b border-white/10 py-5">
-                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-                  Press photos
-                </h3>
-                <p className="mt-2 text-sm text-cream/50">
-                  Approved promotional portraits — PNG downloads for web and
-                  print. Photo 4: Chicago Blues Hall of Fame induction (Sept.
-                  2019); image includes photographer credit in frame.
-                </p>
-                <div className="mt-6 grid gap-6 sm:grid-cols-2">
-                  {epkPressPhotos.map((photo) => {
-                    const src = `${base}epk/${photo.file}`
-                    return (
-                      <figure
-                        key={photo.file}
-                        className="overflow-hidden rounded-xl border border-white/15 bg-black/40 ring-1 ring-white/10"
+            <div className="mt-8 grid gap-6 text-left sm:grid-cols-2">
+              {epkPressPhotos.map((photo) => {
+                const src = `${base}epk/${photo.file}`
+                return (
+                  <figure
+                    key={photo.file}
+                    className="overflow-hidden rounded-2xl border border-white/10 bg-black/40"
+                  >
+                    <div className="flex aspect-[4/5] items-center justify-center bg-black/50">
+                      <img
+                        src={src}
+                        alt={photo.alt}
+                        width={800}
+                        height={1000}
+                        className="h-full w-full object-contain"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <figcaption className="border-t border-white/10 px-4 py-3 text-center">
+                      <a
+                        href={src}
+                        download={photo.downloadName}
+                        className="text-sm font-semibold text-gold underline-offset-4 hover:underline"
                       >
-                        <div className="flex max-h-[min(70vh,28rem)] items-center justify-center bg-black/50 p-2">
-                          <img
-                            src={src}
-                            alt={photo.alt}
-                            width={800}
-                            height={1000}
-                            className="max-h-[min(70vh,28rem)] w-full object-contain"
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        </div>
-                        <figcaption className="border-t border-white/10 px-4 py-3">
-                          <a
-                            href={src}
-                            download={photo.downloadName}
-                            className="text-sm font-semibold text-gold underline-offset-4 hover:underline"
-                          >
-                            Download PNG
-                          </a>
-                        </figcaption>
-                      </figure>
-                    )
-                  })}
-                </div>
-              </div>
-              <div className="border-b border-white/10 py-5">
-                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-                  Production riders
-                </h3>
-                <p className="mt-2 text-sm text-cream/50">
-                  Hospitality and technical requirements for The Soul Town
-                  Sinners.
-                </p>
-                <div className="mt-2">
-                  <RiderRow
-                    title="Hospitality rider"
-                    description="Dressing room, meals, and guest list notes."
-                    href={hospitalityPdf}
-                    fileLabel="Download hospitality rider (PDF)"
-                  />
-                  <RiderRow
-                    title="Tech rider"
-                    description="Stage plot, inputs, and production specs."
-                    href={techDocx}
-                    fileLabel="Download tech rider (DOCX)"
-                  />
-                </div>
-              </div>
-              <div className="py-5">
-                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-                  Logos & wordmarks
-                </h3>
-                <p className="mt-2 text-sm text-cream/50">
-                  Primary horizontal banner — black & white, Charles Wilson &
-                  The Soul Town Sinners. Right-click or use download for print
-                  and web.
-                </p>
-                <div className="mt-5 rounded-xl border border-white/15 bg-black/30 p-4 ring-1 ring-white/10">
-                  <img
-                    src={bandTitleBannerPng}
-                    alt="Charles Wilson & The Soul Town Sinners — wordmark banner"
-                    width={1200}
-                    height={400}
-                    className="mx-auto h-auto w-full max-w-3xl object-contain"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <a
-                  href={bandTitleBannerPng}
-                  download="charles-wilson-soul-town-sinners-banner.png"
-                  className="mt-4 inline-flex text-sm font-semibold text-gold underline-offset-4 hover:underline"
-                >
-                  Download banner (PNG)
-                </a>
-              </div>
+                        Download PNG
+                      </a>
+                    </figcaption>
+                  </figure>
+                )
+              })}
             </div>
           </div>
+
+          <div className="mx-auto mt-16 max-w-4xl text-center">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+              Logos & wordmarks
+            </h3>
+            <p className="mx-auto mt-3 max-w-xl text-sm text-cream/55">
+              Primary horizontal banner — black & white, Charles Wilson & The
+              Soul Town Sinners.
+            </p>
+            <div className="mt-6 rounded-2xl border border-white/10 bg-black/30 p-6">
+              <img
+                src={bandTitleBannerPng}
+                alt="Charles Wilson & The Soul Town Sinners — wordmark banner"
+                width={1200}
+                height={400}
+                className="mx-auto h-auto w-full max-w-3xl object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <a
+              href={bandTitleBannerPng}
+              download="charles-wilson-soul-town-sinners-banner.png"
+              className="mt-5 inline-flex text-sm font-semibold text-gold underline-offset-4 hover:underline"
+            >
+              Download banner (PNG)
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
 
       <section
-        className="mt-16 rounded-2xl border border-white/10 bg-black/20 p-8 md:p-10"
+        className="border-t border-white/10"
         aria-labelledby="epk-video-heading"
       >
-        <h2
-          id="epk-video-heading"
-          className="text-xs font-semibold uppercase tracking-[0.25em] text-gold"
-        >
-          Featured performance
-        </h2>
-        <p className="mt-2 text-sm text-cream/55">
-          Same featured clip as on the Media page — embed for reviewers and
-          bookers.
-        </p>
-        <div className="mx-auto mt-8 max-w-4xl aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
-          <iframe
-            className="h-full w-full"
-            src={FEATURED_YOUTUBE_EMBED_SRC}
-            title="YouTube video player — Charles Wilson featured performance"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
+        <div className="mx-auto max-w-4xl px-5 py-16 text-center md:py-20">
+          <h2
+            id="epk-video-heading"
+            className="text-xs font-semibold uppercase tracking-[0.3em] text-gold"
+          >
+            Featured performance
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-cream/55">
+            Featured clip for reviewers and bookers.
+          </p>
+          <div className="mt-8 aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/40 text-left">
+            <iframe
+              className="h-full w-full"
+              src={FEATURED_YOUTUBE_EMBED_SRC}
+              title="YouTube video player — Charles Wilson featured performance"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
         </div>
       </section>
 
       <section
-        className="mt-12 rounded-2xl border border-white/10 bg-black/20 p-8 md:p-10"
+        className="border-t border-white/10"
         aria-labelledby="epk-soundcloud-heading"
       >
-        <h2
-          id="epk-soundcloud-heading"
-          className="text-xs font-semibold uppercase tracking-[0.25em] text-gold"
-        >
-          SoundCloud
-        </h2>
-        <p className="mt-2 text-sm text-cream/55">
-          Same player as on the Media page — stream tracks and sets from the
-          Crown Prince of Soul.
-        </p>
-        <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-2">
-          <iframe
-            title="SoundCloud — thecrownprinceofsoul"
-            width="100%"
-            height={380}
-            scrolling="no"
-            frameBorder="no"
-            allow="autoplay"
-            src={SOUNDCLOUD_EMBED_SRC}
-          />
+        <div className="mx-auto max-w-4xl px-5 py-16 text-center md:py-20">
+          <h2
+            id="epk-soundcloud-heading"
+            className="text-xs font-semibold uppercase tracking-[0.3em] text-gold"
+          >
+            SoundCloud
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-cream/55">
+            Stream tracks and sets from the Crown Prince of Soul.
+          </p>
+          <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-2 text-left">
+            <iframe
+              title="SoundCloud — thecrownprinceofsoul"
+              width="100%"
+              height={380}
+              scrolling="no"
+              frameBorder="no"
+              allow="autoplay"
+              src={SOUNDCLOUD_EMBED_SRC}
+            />
+          </div>
+          <a
+            href={social.soundcloud}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-block text-sm font-semibold text-gold hover:underline"
+          >
+            Open on SoundCloud →
+          </a>
         </div>
-        <a
-          href={social.soundcloud}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-4 inline-block text-sm font-semibold text-gold hover:underline"
-        >
-          Open on SoundCloud →
-        </a>
       </section>
 
-      <div className="mt-16">
-        <PressLinks variant="epk" />
+      <div className="border-t border-white/10">
+        <div className="mx-auto max-w-3xl px-5 py-16 text-center md:py-20 [&_section]:text-left">
+          <PressLinks variant="epk" />
+        </div>
       </div>
 
-      <section className="mt-16 rounded-2xl border border-white/10 p-8 md:p-10">
-        <h2 className="font-display text-2xl text-cream">Booking</h2>
-        <p className="mt-3 max-w-2xl text-cream/65">
-          For festivals, clubs, private events, and press.
-        </p>
-        <ul className="mt-6 space-y-3 text-cream/80">
-          <li>
-            <a
-              href="mailto:Tulsasoundmgtgroup@gmail.com"
-              className="font-medium text-gold underline-offset-2 hover:underline"
-            >
-              Tulsasoundmgtgroup@gmail.com
-            </a>
-          </li>
-          <li>
-            <a
-              href="tel:+19188495710"
-              className="font-medium text-gold underline-offset-2 hover:underline"
-            >
-              918-849-5710
-            </a>
-          </li>
-        </ul>
+      <section className="border-t border-white/10">
+        <div className="mx-auto max-w-xl px-5 py-16 text-center md:py-20">
+          <h2 className="font-display text-4xl text-cream">Booking</h2>
+          <p className="mt-3 text-cream/65">
+            For festivals, clubs, private events, and press.
+          </p>
+          <ul className="mt-8 space-y-3 text-lg">
+            <li>
+              <a
+                href="mailto:Tulsasoundmgtgroup@gmail.com"
+                className="font-medium text-gold underline-offset-2 hover:underline"
+              >
+                Tulsasoundmgtgroup@gmail.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:+19188495710"
+                className="font-medium text-gold underline-offset-2 hover:underline"
+              >
+                918-849-5710
+              </a>
+            </li>
+          </ul>
+        </div>
       </section>
-    </div>
+    </>
   )
 }
