@@ -1,6 +1,8 @@
 import { useForm, ValidationError } from '@formspree/react'
 
-const BOOKING_EMAIL = 'booking@801familystudios.com'
+const BOOKING_EMAIL = 'Tulsasoundmgtgroup@gmail.com'
+const BOOKING_PHONE_DISPLAY = '918-849-5710'
+const BOOKING_PHONE_TEL = '+19188495710'
 const FORMSPREE_FORM_ID = 'xeepdegp'
 
 export function Contact() {
@@ -33,15 +35,12 @@ export function Contact() {
             </a>{' '}
             or call{' '}
             <a
-              href="tel:+18019186782"
+              href={`tel:${BOOKING_PHONE_TEL}`}
               className="font-medium text-gold underline-offset-2 hover:underline"
             >
-              801-918-6782
+              {BOOKING_PHONE_DISPLAY}
             </a>
             .
-          </p>
-          <p className="mt-6 font-display text-lg text-cream/90">
-            801 Family studios
           </p>
         </div>
 

@@ -274,40 +274,25 @@ export function EPK() {
       </div>
 
       <section className="mt-16 rounded-2xl border border-white/10 p-8 md:p-10">
-        <h2 className="font-display text-2xl text-cream">Booking & representation</h2>
+        <h2 className="font-display text-2xl text-cream">Booking</h2>
         <p className="mt-3 max-w-2xl text-cream/65">
-          For festivals, clubs, private events, and press routing, contact 801
-          Family Studios.
-        </p>
-        <p className="mt-6 font-display text-xl text-cream/90">Michael Bailey</p>
-        <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-gold">
-          801 Family Studios
+          For festivals, clubs, private events, and press.
         </p>
         <ul className="mt-6 space-y-3 text-cream/80">
           <li>
             <a
-              href="mailto:booking@801familystudios.com"
+              href="mailto:Tulsasoundmgtgroup@gmail.com"
               className="font-medium text-gold underline-offset-2 hover:underline"
             >
-              booking@801familystudios.com
+              Tulsasoundmgtgroup@gmail.com
             </a>
           </li>
           <li>
             <a
-              href="tel:+18019186782"
+              href="tel:+19188495710"
               className="font-medium text-gold underline-offset-2 hover:underline"
             >
-              801-918-6782
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.801familystudios.com"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium text-gold underline-offset-2 hover:underline"
-            >
-              www.801familystudios.com
+              918-849-5710
             </a>
           </li>
         </ul>

@@ -90,8 +90,19 @@ export function Layout() {
             </a>
           </div>
         </div>
-        <p className="border-t border-white/5 py-4 text-center text-xs text-cream/40">
+        <p className="border-t border-white/5 px-5 py-4 text-center text-xs text-cream/40">
           © {new Date().getFullYear()} Charles Wilson. All rights reserved.
+          <span className="mx-2 text-cream/25" aria-hidden>
+            ·
+          </span>
+          <a
+            href="https://www.801familystudios.com"
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors hover:text-gold"
+          >
+            Website by 801 Family Studios
+          </a>
         </p>
       </footer>
     </div>
